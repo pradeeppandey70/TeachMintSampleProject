@@ -34,6 +34,7 @@ public class Assignment {
 		
 		//driver.switchTo().frame(0);
 		WebElement enterOtp = driver.findElement(By.xpath("//input[@data-group-idx ='0']"));
+		
 		WebElement submitOtp = driver.findElement(By.cssSelector("button#submit-otp-btn-id"));
 		wait.until(ExpectedConditions.visibilityOf(enterOtp));
 		enterOtp.sendKeys(String.valueOf(120992));
@@ -115,11 +116,12 @@ public class Assignment {
 		List<WebElement> recentCertificateTableRow = driver.findElements(By.xpath("//tr"));
 		List<WebElement> recentCertificateTableFields = driver.findElements(By.xpath("//td"));
 		for(int i=0;i<recentCertificateTableRow.size();i++) {
-			Assert.isTrue((recentCertificateTableFields.get(0).getText().contains("Sam")),"namenotMatching");
-			Assert.isTrue((recentCertificateTableFields.get(0).getText().contains("91-0034256785")),"namenotMatching");
-			Assert.isTrue((recentCertificateTableFields.get(1).getText().contains("12-A")),"namenotMatching");
-			Assert.isTrue((recentCertificateTableFields.get(2).getText().contains("School leaving certificate")),"namenotMatching");
+			Assert.isTrue((recentCertificateTableFields.get(0).getText().contains("Sam")),"Student name not Matching");
+			Assert.isTrue((recentCertificateTableFields.get(0).getText().contains("91-0034256785")),"Student ID not Matching");
+			Assert.isTrue((recentCertificateTableFields.get(1).getText().contains("12-A")),"Student Class not Matching");
+			Assert.isTrue((recentCertificateTableFields.get(2).getText().contains("School leaving certificate")),"Students certificate type not Matching");
 			break;
+			
 		}
 		
 		
